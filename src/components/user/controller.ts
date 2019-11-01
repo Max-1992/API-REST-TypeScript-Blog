@@ -15,7 +15,7 @@ export class UserController {
 
     constructor() {}
 
-   static async addUser( req: Request, res: Response ): Promise<void> {
+   static async addUser( req: Request, res: Response ): Promise<Response> {
                    try {
                        // Capture Data and Execute Store Methods.
                        const userData: IUser = req.body;
@@ -31,7 +31,7 @@ export class UserController {
                 }
 
 
-   static async allUser( req: Request, res: Response ): Promise<void> {
+   static async allUser( req: Request, res: Response ): Promise<Response> {
                    try {
                        // Execute Store Methods for Data Search.
                        const allUser: IUser[] = await UserStore.all();
@@ -46,7 +46,7 @@ export class UserController {
                 }
 
 
-   static async getUser( req: Request, res: Response ): Promise<void> {
+   static async getUser( req: Request, res: Response ): Promise<Response> {
                     try {
                         // Capture Parameters and Execute Data Search Methods.
                         const { id } = req.params;
@@ -69,7 +69,7 @@ export class UserController {
                 }
 
 
-   static async updateUser( req: Request, res: Response ): Promise<void> {
+   static async updateUser( req: Request, res: Response ): Promise<Response> {
                     try {
                         // Capture data and execute update methods.
                         const { id } = req.params;
@@ -92,7 +92,7 @@ export class UserController {
                 }
 
 
-   static async deleteUser( req: Request, res: Response ): Promise<void> {
+   static async deleteUser( req: Request, res: Response ): Promise<Response> {
                     try {
                         // Capture data and execute delete methods.
                         const { id } = req.params;

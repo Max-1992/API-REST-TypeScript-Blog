@@ -15,7 +15,7 @@ export class PostController {
 
     constructor() {}
 
-   static async addPost( req: Request, res: Response ): Promise<void> {
+   static async addPost( req: Request, res: Response ): Promise<Response> {
                    try {
                        // Capture Data and Execute Store Methods.
                        const postData: IPost = req.body;
@@ -31,7 +31,7 @@ export class PostController {
                 }
 
 
-   static async allPost( req: Request, res: Response ): Promise<void> {
+   static async allPost( req: Request, res: Response ): Promise<Response> {
                    try {
                        // Execute Store Methods for Data Search.
                        const allPost: IPost[] = await PostStore.all();
@@ -46,7 +46,7 @@ export class PostController {
                 }
 
 
-   static async getPost( req: Request, res: Response ): Promise<void> {
+   static async getPost( req: Request, res: Response ): Promise<Response> {
                     try {
                         // Capture Parameters and Execute Data Search Methods.
                         const { id } = req.params;
@@ -69,7 +69,7 @@ export class PostController {
                 }
 
 
-   static async updatePost( req: Request, res: Response ): Promise<void> {
+   static async updatePost( req: Request, res: Response ): Promise<Response> {
                     try {
                         // Capture data and execute update methods.
                         const { id } = req.params;
@@ -92,7 +92,7 @@ export class PostController {
                 }
 
 
-   static async deletePost( req: Request, res: Response ): Promise<void> {
+   static async deletePost( req: Request, res: Response ): Promise<Response> {
                     try {
                         // Capture data and execute delete methods.
                         const { id } = req.params;
